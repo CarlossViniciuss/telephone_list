@@ -1,0 +1,16 @@
+CONTEXTO
+    Desenvolver um sistema de lista telefonica, com um banco relacional
+    Onde eu consiga efetuar o cadastro de uma pessoa
+    E para cada cadastro ter um numero de telefone onde pode ser adicionado na lista telefonica de outros cadastrados
+
+NECESSIDADES
+    1 - Preciso efetuar a criação do banco
+    2 - Preciso efetuar a criação de uma conexão para o banco
+    3 - Desenvolver o cadastro no banco
+    4 - Desenvolver a adição de um cadastrado na lista telefonica de um outro cadastro ja existente
+
+BANCO DE DADOS
+    1 - Cadastro com
+        - Nome
+        - Telefone
+        - Relacionamento de cadastros
