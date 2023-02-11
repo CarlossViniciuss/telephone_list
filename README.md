@@ -1,2 +1,103 @@
-# telephone_list
-...
+<p align="center">
+  
+  <img alt="License" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img alt="License" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge">
+
+</p></br>
+
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
+</p> 
+
+<h1 align="center">Sistema de Agenda Telefônica em Python com PostgreSQL</h1>
+
+
+## ⚙ Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Python](https://www.python.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+</br>
+
+## 💻 Projeto
+
+<p>
+Este é um sistema de agenda telefônica construído em Python com o banco de dados relacional PostgreSQL. Ele é manipulado por comando no terminal e oferece as seguintes funcionalidades:
+</p>
+* Cadastro de pessoa com nome e telefone
+</br>
+* Adicionar pessoas cadastradas na lista de contatos de outra pessoa já cadastrada
+</br></br>
+
+## ⏩ Processo de criação
+Como forma de boas praticas e para organização do sistema o mesmo foi separado em diversas pastas para que ficassem distribuidas de acordo com suas funções.
+
+1. DB (Manipulação do banco de dados)
+3. env (Ambiente virtual)
+4. main.py (Arquivo base de execussão)
+5. requirements.txt (Arquivo com as necessidades de instalação)
+</br></br>
+
+## 🌌 Instalação
+Siga estas etapas para instalar e executar o sistema:
+
+1. Instale o PostgreSQL e crie um banco de dados.
+2. Instale a biblioteca psycopg2 para Python, que é responsável pela conexão com o banco de dados PostgreSQL. Você pode instalar usando o seguinte comando:
+```
+pip install psycopg2
+```
+3. Clone o repositório do Github com o seguinte comando:
+```
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+4. Configure a conexão com o banco de dados no arquivo agenda.py, especificando o endereço, o nome do banco, o nome de usuário e a senha.
+5. Crie as tabelas no banco de dados, executando as seguintes instruções SQL:
+```
+CREATE TABLE pessoas (
+    id serial PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE contatos (
+    id serial PRIMARY KEY,
+    pessoa_id INTEGER NOT NULL,
+    contato_id INTEGER NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoas (id),
+    FOREIGN KEY (contato_id) REFERENCES pessoas (id)
+);
+
+```
+6. Execute o arquivo agenda.py no terminal ou no prompt de comando com o seguinte comando:
+
+```
+python agenda.py
+```
+7. Siga as instruções exibidas no terminal ou no prompt de comando para utilizar o sistema de agenda telefônica.
+
+
+## ✔✔ Contribuição
+Contribuições são sempre bem-vindas! Se você tiver alguma sugestão ou encontrar algum bug, por favor, abra uma issue ou faça um pull request.
+</br></br>
+
+## 📄 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+</br></br>
+
+## Autor
+
+ <img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/69722024?v=4" width="100px" style="border-radius:50%"/>
+
+ <sub><b>Carlos Vinicius</b></sub><a href="">🚀</a>
+<br />
+
+Feito com ❤️ por Carlos Vinicius 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Carlos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/carlos-vinicius-95745a1a4)](https://www.linkedin.com/in/carlos-vinicius-95745a1a4) 
+[![Gmail Badge](https://img.shields.io/badge/-carlosvinicius.index@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:carlosvinicius.index@gmail.com)](mailto:carlosvinicius.index@gmail.com)
