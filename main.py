@@ -30,4 +30,4 @@ def menu():
         exit()
     else:
         print("Opção inválida.")
-    menu()
+menu()
