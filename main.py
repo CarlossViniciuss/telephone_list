@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from DB.repository.repository import *
 
 def menu():
