@@ -47,30 +47,7 @@ pip install psycopg2
 ```
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
-4. Configure a conexão com o banco de dados no arquivo agenda.py, especificando o endereço, o nome do banco, o nome de usuário e a senha.
-5. Crie as tabelas no banco de dados, executando as seguintes instruções SQL:
-```
-CREATE TABLE pessoas (
-    id serial PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(20) NOT NULL
-);
-
-CREATE TABLE contatos (
-    id serial PRIMARY KEY,
-    pessoa_id INTEGER NOT NULL,
-    contato_id INTEGER NOT NULL,
-    FOREIGN KEY (pessoa_id) REFERENCES pessoas (id),
-    FOREIGN KEY (contato_id) REFERENCES pessoas (id)
-);
-
-```
-6. Execute o arquivo agenda.py no terminal ou no prompt de comando com o seguinte comando:
-
-```
-python agenda.py
-```
-7. Siga as instruções exibidas no terminal ou no prompt de comando para utilizar o sistema de agenda telefônica.
+!!!!!!!EM CONSTRUÇÃO!!!!!!!!
 
 
 ## ✔✔ Contribuição
