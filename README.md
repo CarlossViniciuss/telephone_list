@@ -47,9 +47,13 @@ pip install psycopg2
 ```
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
-4. Instale o PGAdmin(Pode ser em outro gerenciador também) no seu computador
-5. Crie um database em localhost com o nome 'minha_agenda'
-6. No console crie um novo usuário e um novo banco de dados executando os seguintes comandos (Ao criar analise se o usuario esta com todas as permissões):
+4. Ao clonar o repositorio digite no terminal:
+```
+pip install -r requirements.txt
+```
+5. Instale o PGAdmin(Pode ser em outro gerenciador também) no seu computador
+6. Crie um database em localhost com o nome 'minha_agenda'
+7. No console crie um novo usuário e um novo banco de dados executando os seguintes comandos (Ao criar analise se o usuario esta com todas as permissões):
 ```
 CREATE USER meu_usuario WITH PASSWORD 'minha_senha';
 CREATE DATABASE minha_agenda OWNER meu_usuario;
