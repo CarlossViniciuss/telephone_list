@@ -31,7 +31,7 @@ Como forma de boas praticas e para organização do sistema o mesmo foi separado
 
 1. DB (Manipulação do banco de dados)
 3. env (Ambiente virtual)
-4. main.py (Arquivo base de execussão)
+4. main.py (Arquivo base de execução)
 5. requirements.txt (Arquivo com as necessidades de instalação)
 </br></br>
 
@@ -47,8 +47,17 @@ pip install psycopg2
 ```
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
-!!!!!!!EM CONSTRUÇÃO!!!!!!!!
+4. Instale o PGAdmin(Pode ser em outro gerenciador também) no seu computador
+5. Crie um database em localhost com o nome 'minha_agenda'
+6. No console crie um novo usuário e um novo banco de dados executando os seguintes comandos:
+```
+CREATE USER meu_usuario WITH PASSWORD 'minha_senha';
+CREATE DATABASE minha_agenda OWNER meu_usuario;
+```
+Pronto! Agora você tem um novo banco de dados PostgreSQL criado em localhost. Basta usar as informações de conexão adequadas no seu script Python para acessar o banco de dados.
 
+## Execução
+Rode no terminal 'main.py' e se divirta (Lembrando o banco deve ser configurado)
 
 ## ✔✔ Contribuição
 Contribuições são sempre bem-vindas! Se você tiver alguma sugestão ou encontrar algum bug, por favor, abra uma issue ou faça um pull request.
