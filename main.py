@@ -13,12 +13,15 @@ def menu():
     if opcao == 1:
         nome = input("Nome: ")
         telefone = input("Telefone: ")
+        criar_tabela()
         cadastrar_pessoa(nome, telefone)
     elif opcao == 2:
+        criar_tabela()
         pessoas = listar_pessoas()
         for i, pessoa in enumerate(pessoas):
             print(f"{i + 1} - {pessoa[1]} - {pessoa[2]}")
     elif opcao == 3:
+        criar_tabela()
         pessoas = listar_pessoas()
         for i, pessoa in enumerate(pessoas):
             print(f"{i + 1} - {pessoa[1]}")
