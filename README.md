@@ -36,7 +36,7 @@ Como forma de boas praticas e para organização do sistema o mesmo foi separado
 </br></br>
 
 ## 🌌 Instalação
-Siga estas etapas para instalar e executar o sistema:
+Siga estas etapas para instalar e executar o sistema (Lembrando que podemos utilizar um ambiente virtual no projeto):
 
 1. Instale o PostgreSQL e crie um banco de dados.
 2. Instale a biblioteca psycopg2 para Python, que é responsável pela conexão com o banco de dados PostgreSQL. Você pode instalar usando o seguinte comando:
