@@ -14,7 +14,6 @@ def criar_tabela():
         CREATE TABLE IF NOT EXISTS pessoas (
             id serial PRIMARY KEY,
             nome varchar(255) NOT NULL,
-            telefone varchar(255) NOT NULL
         );
     """
     )
@@ -22,7 +21,9 @@ def criar_tabela():
         CREATE TABLE IF NOT EXISTS contatos (
             id serial PRIMARY KEY,
             pessoa_id integer REFERENCES pessoas(id),
-            contato_id integer REFERENCES pessoas(id)
+            contato_id integer REFERENCES pessoas(id),
+            telefone varchar(255) NOT NULL
+
         );
     """)
     conn.commit()
