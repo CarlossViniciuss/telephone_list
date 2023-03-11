@@ -1,36 +1,38 @@
-# -*- coding: utf-8 -*-
-from DB.repository.repository import *
+from views.adicionar_telefone import adicionar_telefone
+from views.cadastrar_pessoas import cadastrar_pessoa
+from views.deletar_pessoas import deletar_pessoa
+from views.listar_contatos import listar_contatos
+from views.listar_lista_telefonica import listar_lista_telefonica
+from views.listar_pessoas import listar_pessoas
 
+# Função para exibir o menu da aplicação
 def menu():
-    print("""
-        Agenda Telefônica
-        1 - Cadastrar Pessoa
-        2 - Listar Pessoas
-        3 - Adicionar Contato
-        4 - Sair
-    """)
-    opcao = int(input("Escolha uma opção: "))
-    if opcao == 1:
-        nome = input("Nome: ")
-        telefone = input("Telefone: ")
-        criar_tabela()
-        cadastrar_pessoa(nome, telefone)
-    elif opcao == 2:
-        criar_tabela()
-        pessoas = listar_pessoas()
-        for i, pessoa in enumerate(pessoas):
-            print(f"{i + 1} - {pessoa[1]} - {pessoa[2]}")
-    elif opcao == 3:
-        criar_tabela()
-        pessoas = listar_pessoas()
-        for i, pessoa in enumerate(pessoas):
-            print(f"{i + 1} - {pessoa[1]}")
-        pessoa_id = int(input("Selecione a pessoa que deseja adicionar um contato: "))
-        contato_id = int(input("Selecione a pessoa que deseja adicionar como contato: "))
-        adicionar_contato(pessoas[pessoa_id - 1][0], pessoas[contato_id - 1][0])
-    elif opcao == 4:
-        print("Saindo...")
-        exit()
+    print("==== Lista Telefônica ====")
+    print("1 - Cadastrar pessoa")
+    print("2 - Listar contatos")
+    print("3 - Deletar pessoa")
+    print("4 - Listar todas as pessoas")
+    print("5 - Adicionar telefone")
+    print("6 - Listar lista telefônica")
+    print("7 - Sair")
+
+# Loop principal da aplicação
+while True:
+    menu()
+    opcao = input("Digite uma opção: ")
+    if opcao == "1":
+        cadastrar_pessoa()
+    elif opcao == "2":
+        listar_contatos()
+    elif opcao == "3":
+        deletar_pessoa()
+    elif opcao == "4":
+        listar_pessoas()
+    elif opcao == "5":
+        adicionar_telefone()
+    elif opcao == "6":
+        listar_lista_telefonica()
+    elif opcao == "7":
+        break
     else:
-        print("Opção inválida.")
-menu()
+        print("Opção inválida!")

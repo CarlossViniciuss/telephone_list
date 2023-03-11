@@ -1,6 +1,7 @@
 import psycopg2
 
-def conectar_banco():
+# Função para conectar ao banco de dados
+def conectar():
     conn = psycopg2.connect(
         host="localhost",
         database="minha_agenda",
@@ -8,3 +9,4 @@ def conectar_banco():
         password="minha_senha"
     )
     return conn
+
