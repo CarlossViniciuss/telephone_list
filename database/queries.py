@@ -16,14 +16,7 @@ def criar_tabelas():
             telefone VARCHAR(20) NOT NULL
         );
     """)
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS lista_telefonica (
-            id SERIAL PRIMARY KEY,
-            id_pessoa INTEGER NOT NULL REFERENCES pessoas(id),
-            telefone VARCHAR(20) NOT NULL
-);
 
-    """)
     conn.commit()
     cur.close()
     conn.close()
