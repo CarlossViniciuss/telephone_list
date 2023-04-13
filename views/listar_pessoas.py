@@ -3,6 +3,5 @@ from models.pessoas_models import Pessoas
 
 def listar_pessoas():
     criar_tabelas()
-    pessoas = Pessoas()
-    pessoas.listar_pessoas()
+    Pessoas.listar_pessoas()
     

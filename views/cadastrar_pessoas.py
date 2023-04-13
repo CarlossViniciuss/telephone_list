@@ -8,12 +8,10 @@ def cadastrar_pessoa():
     nome = input("Digite o nome da pessoa: ")
     telefone = input("Digite o telefone da pessoa: ")
 
-    pessoas = Pessoas()
-    pessoa_existente = pessoas.consulta_pessoa_existente(nome)
-    cadastro_pessoa = pessoas.cadastro_pessoa(nome, telefone)
+    pessoa_existente = Pessoas.consulta_pessoa_existente(nome)
     
     if pessoa_existente:
         print("Já existe uma pessoa cadastrada com esse nome!")
     else:
-        cadastro_pessoa
+        Pessoas.cadastro_pessoa(nome, telefone)
         print("Pessoa cadastrada com sucesso!")

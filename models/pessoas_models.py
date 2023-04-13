@@ -3,18 +3,23 @@ conn = conectar()
 cur = conn.cursor()
 
 class Pessoas:
+    def __init__(self, nome, telefone):
+        self.nome = nome
+        self.telefone = telefone
 
-    def consulta_pessoa_existente(self, nome):
+    @staticmethod
+    def consulta_pessoa_existente(nome):
         cur.execute("SELECT id FROM pessoas WHERE nome = %s", (nome,))
         return cur.fetchone()
 
-
-    def cadastro_pessoa(self, nome, telefone):
+    @staticmethod
+    def cadastro_pessoa(nome, telefone):
         cur.execute("INSERT INTO pessoas (nome) VALUES (%s) RETURNING id", (nome,))
         id_pessoa = cur.fetchone()[0]
         cur.execute("INSERT INTO telefones (id_pessoa, telefone) VALUES (%s, %s)", (id_pessoa, telefone))
         conn.commit()
 
+    @staticmethod
     def deletar_pessoa(self, nome):
         cur.execute("SELECT id FROM pessoas WHERE nome LIKE %s", (f"%{nome}%",))
         id_pessoa = cur.fetchone()
@@ -26,7 +31,8 @@ class Pessoas:
         else:
             print("Pessoa não encontrada!")
 
-    def listar_pessoas(self):
+    @staticmethod
+    def listar_pessoas():
         cur.execute("SELECT COUNT(*) FROM pessoas")
         total_pessoas = cur.fetchone()[0]
         num_paginas = (total_pessoas // 10) + 1

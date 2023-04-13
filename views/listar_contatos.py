@@ -5,7 +5,5 @@ from models.telephone_models import Telefones
 def listar_contatos():
     criar_tabelas()
     nome = input("Digite o nome da pessoa: ")
-
-    pessoas = Telefones()
     
-    pessoas.listar_contatos(nome)
+    Telefones.listar_contatos(nome)

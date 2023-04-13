@@ -5,5 +5,4 @@ from models.telephone_models import Telefones
 def adicionar_telefone():
     criar_tabelas()
     nome = input("Digite o nome da pessoa que deseja adicionar um telefone: ")
-    telefones = Telefones()
-    telefones.adicionar_telefone(nome)
+    Telefones.adicionar_telefone(nome)

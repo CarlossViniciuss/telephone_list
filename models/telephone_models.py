@@ -3,7 +3,11 @@ conn = conectar()
 cur = conn.cursor()
 
 class Telefones:
-    def listar_contatos(self, nome):
+    def __init__(self, nome):
+        self.nome = nome
+
+    @staticmethod
+    def listar_contatos(nome):
         cur.execute("SELECT id FROM pessoas WHERE nome LIKE %s", (f"%{nome}%",))
         id_pessoa = cur.fetchone()
         if id_pessoa:
@@ -15,7 +19,8 @@ class Telefones:
         else:
             print("Pessoa não encontrada!")
 
-    def adicionar_telefone(self, nome):
+    @staticmethod
+    def adicionar_telefone(nome):
         cur.execute("SELECT id FROM pessoas WHERE nome = %s", (nome,))
         id_pessoa = cur.fetchone()
         if id_pessoa:
@@ -26,7 +31,8 @@ class Telefones:
         else:
             print("Pessoa não encontrada!")
 
-    def listar_lista_telefonica(self):
+    @staticmethod
+    def listar_lista_telefonica():
         cur.execute("SELECT pessoas.nome, telefones.telefone FROM pessoas INNER JOIN telefones ON pessoas.id = telefones.id_pessoa")
         contatos = cur.fetchall()
         if contatos:
