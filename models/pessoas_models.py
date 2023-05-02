@@ -9,8 +9,14 @@ class Pessoas:
 
     @staticmethod
     def consulta_pessoa_existente(nome):
-        cur.execute("SELECT id FROM pessoas WHERE nome = %s", (nome,))
-        return cur.fetchone()
+        cur.execute("SELECT nome, telefone FROM pessoas INNER JOIN telefones ON pessoas.id = telefones.id_pessoa WHERE nome = %s", (nome,))
+        resultado = cur.fetchone()
+        if resultado:
+            nome, telefone = resultado
+            pessoa = Pessoas(nome, telefone)
+            return pessoa
+        else:
+            return None
 
     @staticmethod
     def cadastro_pessoa(nome, telefone):

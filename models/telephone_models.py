@@ -41,3 +41,7 @@ class Telefones:
                 print(f"{contato[0]} - {contato[1]}")
         else:
             print("Não há contatos na lista telefônica!")
+
+#  Tirar dvida com o Everton
+# def get_telefones():
+#     return Telefones()
