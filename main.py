@@ -4,6 +4,7 @@ from views.deletar_pessoas import deletar_pessoa
 from views.listar_contatos import listar_contatos
 from views.listar_lista_telefonica import listar_lista_telefonica
 from views.listar_pessoas import listar_pessoas
+from views.buscar_por_nome import buscar_por_nome
 
 # Função para exibir o menu da aplicação
 def menu():
@@ -14,7 +15,8 @@ def menu():
     print("4 - Listar todas as pessoas")
     print("5 - Adicionar telefone")
     print("6 - Listar lista telefônica")
-    print("7 - Sair")
+    print("7 - Buscar por nome")
+    print("8 - Sair")
 
 # Loop principal da aplicação
 while True:
@@ -33,6 +35,8 @@ while True:
     elif opcao == "6":
         listar_lista_telefonica()
     elif opcao == "7":
+        buscar_por_nome()
+    elif opcao == "8":
         break
     else:
         print("Opção inválida!")

@@ -13,5 +13,5 @@ def cadastrar_pessoa():
     if pessoa_existente:
         print("Já existe uma pessoa cadastrada com esse nome!")
     else:
-        Pessoas.cadastro_pessoa(nome, telefone)
-        print("Pessoa cadastrada com sucesso!")
+        pessoa_cadastrada = Pessoas.cadastro_pessoa(nome, telefone)
+        print(f"Pessoa cadastrada com sucesso: {pessoa_cadastrada.id ,pessoa_cadastrada.nome, pessoa_cadastrada.telefone}")

@@ -24,6 +24,7 @@ class Pessoas:
         id_pessoa = cur.fetchone()[0]
         cur.execute("INSERT INTO telefones (id_pessoa, telefone) VALUES (%s, %s)", (id_pessoa, telefone))
         conn.commit()
+        return Pessoas(id_pessoa, nome, telefone)
 
     @staticmethod
     def deletar_pessoa(self, nome):

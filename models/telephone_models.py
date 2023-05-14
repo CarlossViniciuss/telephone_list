@@ -3,7 +3,8 @@ conn = conectar()
 cur = conn.cursor()
 
 class Telefones:
-    def __init__(self, nome):
+    def __init__(self, id, nome):
+        self.id = id
         self.nome = nome
 
     @staticmethod
@@ -42,6 +43,12 @@ class Telefones:
         else:
             print("Não há contatos na lista telefônica!")
 
-#  Tirar dvida com o Everton
-# def get_telefones():
-#     return Telefones()
+    @staticmethod
+    def buscar_por_nome(nome):
+        cur.execute("SELECT id FROM pessoas WHERE nome = %s", (nome, ))
+        resultado = cur.fetchone()
+        if resultado:
+            id_pessoa = resultado[0] # Acessa o primeiro elemento da tupla, que é o valor do ID
+            return Telefones(id_pessoa, nome)
+        else:
+            return None
